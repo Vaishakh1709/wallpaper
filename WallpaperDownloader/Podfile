@@ -1,0 +1,18 @@
+platform :ios, '9.0'
+
+target 'WallpaperDownloader' do
+  use_frameworks!
+
+  # Pods for WallpaperDownloader
+  pod 'SDWebImage', '~> 5.0'
+
+  target 'WallpaperDownloaderTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'WallpaperDownloaderUITests' do
+    inherit! :search_paths
+    # Pods for UI testing
+  end
+end

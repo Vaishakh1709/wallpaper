@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6fy-Xg-Zmp">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="c15-LL-VEa">
+            <objects>
+                <viewController id="6fy-Xg-Zmp" customClass="ViewController" customModule="WallpaperDownloader" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eD6-2f-6cY">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="dKX-fx-3N0">
+                                <rect key="frame" x="0.0" y="179" width="393" height="197"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="197" id="FUL-MF-NlX"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="dXW-bK-0nr">
+                                    <size key="itemSize" width="157" height="172"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCell" translatesAutoresizingMaskIntoConstraints="NO" id="GZW-qq-Ug2" customClass="ImageCollectionViewCell" customModule="WallpaperDownloader" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="12.666666666666666" width="157" height="172"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Gf1-7J-06J">
+                                            <rect key="frame" x="0.0" y="0.0" width="157" height="172"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundGradient" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6mN-FN-634">
+                                                    <rect key="frame" x="0.0" y="0.0" width="157" height="172"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="157" id="hY8-EP-kcf"/>
+                                                        <constraint firstAttribute="height" constant="172" id="lM3-p8-eoZ"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="6mN-FN-634" firstAttribute="top" secondItem="Gf1-7J-06J" secondAttribute="top" id="9ZE-rM-TXg"/>
+                                                <constraint firstItem="6mN-FN-634" firstAttribute="leading" secondItem="Gf1-7J-06J" secondAttribute="leading" id="KDG-vG-Tsz"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="imageView" destination="6mN-FN-634" id="Jqe-h4-ZVN"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="D" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yF2-uv-n5o">
+                                <rect key="frame" x="99" y="98" width="12" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="yrg-GG-GYO"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="dKX-fx-3N0" firstAttribute="trailing" secondItem="yrg-GG-GYO" secondAttribute="trailing" id="4VC-Sy-tAe"/>
+                            <constraint firstItem="dKX-fx-3N0" firstAttribute="top" secondItem="yrg-GG-GYO" secondAttribute="top" constant="120" id="70Z-1O-07r"/>
+                            <constraint firstItem="dKX-fx-3N0" firstAttribute="leading" secondItem="yrg-GG-GYO" secondAttribute="leading" id="l5u-St-hKj"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageCollectionView" destination="dKX-fx-3N0" id="hOI-Db-9fq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WwN-Xj-qw0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-72.51908396946564" y="-314.08450704225356"/>
+        </scene>
+        <!--Selected Image View Controller-->
+        <scene sceneID="iDj-Be-FNJ">
+            <objects>
+                <viewController storyboardIdentifier="SelectedImageViewController" id="XPn-oq-sPI" customClass="SelectedImageViewController" customModule="WallpaperDownloader" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hih-Z4-0CS">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vLu-lz-Eow">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7wU-bs-XL5">
+                                <rect key="frame" x="23" y="59" width="62" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Back"/>
+                                <connections>
+                                    <action selector="closeTapped:" destination="XPn-oq-sPI" eventType="touchUpInside" id="mZ0-u6-U28"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2wV-hV-kX2">
+                                <rect key="frame" x="82" y="759" width="229" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Download">
+                                    <color key="baseBackgroundColor" red="0.30984238889999999" green="0.76942896839999997" blue="0.46219980599999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="downloadImageButtonAction:" destination="XPn-oq-sPI" eventType="touchUpInside" id="A3K-6y-eqb"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="rGJ-Kp-GNm"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vLu-lz-Eow" firstAttribute="top" secondItem="hih-Z4-0CS" secondAttribute="top" id="1rf-m1-fxr"/>
+                            <constraint firstAttribute="bottom" secondItem="vLu-lz-Eow" secondAttribute="bottom" id="BAV-2v-vDc"/>
+                            <constraint firstItem="vLu-lz-Eow" firstAttribute="trailing" secondItem="rGJ-Kp-GNm" secondAttribute="trailing" id="KEO-me-FLU"/>
+                            <constraint firstItem="vLu-lz-Eow" firstAttribute="leading" secondItem="rGJ-Kp-GNm" secondAttribute="leading" id="oh2-wT-k9C"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="downloadButton" destination="2wV-hV-kX2" id="7DQ-o5-TtU"/>
+                        <outlet property="selectedImageView" destination="vLu-lz-Eow" id="yQM-XJ-9Ni"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oZu-2s-wZm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="739.69465648854964" y="-314.08450704225356"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="backgroundGradient" width="1280" height="1280"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
