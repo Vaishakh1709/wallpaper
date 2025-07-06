@@ -17,18 +17,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bottom_bg" translatesAutoresizingMaskIntoConstraints="NO" id="5qf-rX-4r3">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Zrm-13-ZvT">
-                                <rect key="frame" x="0.0" y="59" width="393" height="793"/>
+                                <rect key="frame" x="0.0" y="134" width="393" height="718"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Download Images" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bwz-tg-LLc">
+                                <rect key="frame" x="16" y="88" width="277" height="38"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="277" id="FFm-2M-IX6"/>
+                                    <constraint firstAttribute="height" constant="38" id="SMs-wy-vJE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="yrg-GG-GYO"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Zrm-13-ZvT" firstAttribute="top" secondItem="yrg-GG-GYO" secondAttribute="top" id="OOm-UB-tId"/>
+                            <constraint firstItem="bwz-tg-LLc" firstAttribute="leading" secondItem="yrg-GG-GYO" secondAttribute="leading" constant="16" id="HHl-BS-tfv"/>
+                            <constraint firstItem="Zrm-13-ZvT" firstAttribute="top" secondItem="yrg-GG-GYO" secondAttribute="top" constant="75" id="OOm-UB-tId"/>
                             <constraint firstAttribute="bottom" secondItem="Zrm-13-ZvT" secondAttribute="bottom" id="ZW2-kJ-ySn"/>
                             <constraint firstItem="Zrm-13-ZvT" firstAttribute="leading" secondItem="yrg-GG-GYO" secondAttribute="leading" id="ofQ-Hv-ee3"/>
                             <constraint firstItem="Zrm-13-ZvT" firstAttribute="trailing" secondItem="yrg-GG-GYO" secondAttribute="trailing" id="q7G-UD-Ng3"/>
+                            <constraint firstItem="bwz-tg-LLc" firstAttribute="top" secondItem="yrg-GG-GYO" secondAttribute="top" constant="29" id="tGu-ng-H0Y"/>
                         </constraints>
                     </view>
                     <connections>
@@ -156,6 +173,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="bottom_bg" width="1242" height="2689"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

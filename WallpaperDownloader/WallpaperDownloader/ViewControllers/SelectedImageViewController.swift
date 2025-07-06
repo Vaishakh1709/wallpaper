@@ -29,7 +29,6 @@ class SelectedImageViewController: UIViewController {
                     return
                 }
                 
-                // Show loading indicator
                 let activityIndicator = UIActivityIndicatorView(style: .large)
                 activityIndicator.center = view.center
                 activityIndicator.startAnimating()

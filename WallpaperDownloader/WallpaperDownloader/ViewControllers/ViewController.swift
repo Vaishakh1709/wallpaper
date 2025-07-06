@@ -10,10 +10,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         "https://images.pexels.com/photos/1212487/pexels-photo-1212487.jpeg",
         "https://images.pexels.com/photos/1535162/pexels-photo-1535162.jpeg",
         "https://images.pexels.com/photos/19822276/pexels-photo-19822276/free-photo-of-view-on-the-moon-through-the-tree.jpeg",
-        "https://images.pexels.com/photos/31033287/pexels-photo-31033287/free-photo-of-vibrant-autumn-maple-tree-in-japanese-park.png","https://images.pexels.com/photos/5339610/pexels-photo-5339610.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load","https://images.pexels.com/photos/12342080/pexels-photo-12342080.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2","https://images.pexels.com/photos/2293372/pexels-photo-2293372.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+        "https://images.pexels.com/photos/31033287/pexels-photo-31033287/free-photo-of-vibrant-autumn-maple-tree-in-japanese-park.png","https://images.pexels.com/photos/5339610/pexels-photo-5339610.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load","https://images.pexels.com/photos/12342080/pexels-photo-12342080.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2","https://images.pexels.com/photos/2293372/pexels-photo-2293372.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", "https://images.pexels.com/photos/16873765/pexels-photo-16873765/free-photo-of-close-up-of-a-dandelion.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
     ]
 
-    let numberOfRows = 5  // Number of horizontal rows you want to show
+    let numberOfRows = 5
 
     
     override func viewDidLoad() {
@@ -37,7 +37,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return cell
     }
     
-    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 220 
+    }
     
     func didSelectImage(with url: String) {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)

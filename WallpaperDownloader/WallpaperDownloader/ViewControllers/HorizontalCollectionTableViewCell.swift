@@ -36,7 +36,6 @@ class HorizontalCollectionTableViewCell: UITableViewCell {
 extension HorizontalCollectionTableViewCell: UICollectionViewDataSource, UICollectionViewDelegate {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // Always return 5: 4 images + 1 banana cell
         return min(images.count, 4) + 1
     }
 
