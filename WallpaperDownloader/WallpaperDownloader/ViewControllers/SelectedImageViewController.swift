@@ -8,14 +8,21 @@ class SelectedImageViewController: UIViewController {
     @IBOutlet weak var downloadButton: UIButton!
     @IBOutlet weak var selectedImageView: UIImageView!
     var imageURL: String?
+    var imageData: Data?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         downloadButton.layer.cornerRadius = 10
-        
-        if let urlString = imageURL, let url = URL(string: urlString) {
-            selectedImageView.sd_setImage(with: url, placeholderImage: UIImage(named: "placeholder"))
+        if ((self.imageData) != nil) {
+            if let image = UIImage(data: self.imageData!) {
+                self.selectedImageView.image = image
+            }
+        }
+        else {
+            if let urlString = imageURL, let url = URL(string: urlString) {
+                selectedImageView.sd_setImage(with: url, placeholderImage: UIImage(named: "placeholder"))
+            }
         }
     }
     
@@ -24,36 +31,44 @@ class SelectedImageViewController: UIViewController {
     }
     
     @IBAction func downloadImageButtonAction(_ sender: Any) {
-        guard let urlString = imageURL, let url = URL(string: urlString) else {
-                    showAlert(title: "Error", message: "Invalid image URL")
-                    return
-                }
-                
-                let activityIndicator = UIActivityIndicatorView(style: .large)
-                activityIndicator.center = view.center
-                activityIndicator.startAnimating()
-                view.addSubview(activityIndicator)
-                
-                // Download image using URLSession
-                URLSession.shared.dataTask(with: url) { [weak self] data, response, error in
-                    // Execute UI updates on main thread
-                    DispatchQueue.main.async {
-                        activityIndicator.removeFromSuperview()
-                        
-                        if let error = error {
-                            self?.showAlert(title: "Download Failed", message: error.localizedDescription)
-                            return
-                        }
-                        
-                        guard let data = data, let image = UIImage(data: data) else {
-                            self?.showAlert(title: "Error", message: "Could not create image from data")
-                            return
-                        }
-                        
-                        // Save image to photo library
-                        self?.saveImageToPhotoLibrary(image)
+        
+        if ((self.imageData) != nil) {
+            if let image = UIImage(data: self.imageData!) {
+                self.saveImageToPhotoLibrary(image)
+            }
+        }
+        else {
+            guard let urlString = imageURL, let url = URL(string: urlString) else {
+                showAlert(title: "Error", message: "Invalid image URL")
+                return
+            }
+            
+            let activityIndicator = UIActivityIndicatorView(style: .large)
+            activityIndicator.center = view.center
+            activityIndicator.startAnimating()
+            view.addSubview(activityIndicator)
+            
+            // Download image using URLSession
+            URLSession.shared.dataTask(with: url) { [weak self] data, response, error in
+                // Execute UI updates on main thread
+                DispatchQueue.main.async {
+                    activityIndicator.removeFromSuperview()
+                    
+                    if let error = error {
+                        self?.showAlert(title: "Download Failed", message: error.localizedDescription)
+                        return
                     }
-                }.resume()
+                    
+                    guard let data = data, let image = UIImage(data: data) else {
+                        self?.showAlert(title: "Error", message: "Could not create image from data")
+                        return
+                    }
+                    
+                    // Save image to photo library
+                    self?.saveImageToPhotoLibrary(image)
+                }
+            }.resume()
+        }
             }
             
             private func saveImageToPhotoLibrary(_ image: UIImage) {
